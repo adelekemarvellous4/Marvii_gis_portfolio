@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Updated GIS Portfolio Website</title>
+
+<!-- Google Fonts - Better Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+ 
+<!-- Navigation -->
+<nav class="nav" id="navbar">
+  <div class="container nav-container">
+    
+    <a href="#home" class="nav-brand">
+      <div class="nav-brand-mark">
+        <div class="nav-logo">
+          <div class="nav-logo">🗺️</div>
+        </div>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Adeleke M.</span>
+        <span class="nav-brand-role">GIS • Remote Sensing • Spatial Data</span>
+      </div>
+    </a>
+
+    <div class="nav-center-shell">
+      <div class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta">
+        <i class="fas fa-paper-plane"></i>
+        <span>Let’s Talk</span>
+      </a>
+
+      <button class="nav-burger" id="burger-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<!-- Hero Section with Profile Picture -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <!-- Profile Picture -->
+      <div class="hero-profile">
+        <div class="profile-image-wrapper">
+          <!-- Add your photo here -->
+          <img src= "assets/images/profile.jpg"    alt="Adeleke Marvellous Ayomide" class="profile-image" data-aos="zoom-in" data-aos-delay="200">
+          <div class="profile-ring"></div>
+          <div class="profile-status"></div>
+        </div>
+      </div>
+      
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">Adeleke Marvellous Ayomide</h1>
+      
+      <div class="hero-roles">
+        <span>GIS Analyst</span>
+        <span class="role-dot"></span>
+        <span>Spatial Data Scientist</span>
+        <span class="role-dot"></span>
+        <span>Remote Sensing Specialist</span>
+      </div>
+      
+      <p class="hero-description">
+        I design spatial intelligence systems that transform satellite data, GIS workflows, and environmental modelling into actionable insights for land systems, climate analysis, and urban change.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="mailto:adelekemarvellous4@gmail.com" class="btn btn-outline">
+          <i class="fas fa-envelope"></i>
+          <span>Get In Touch</span>
+        </a>
+      </div>
+      
+      <div class="hero-social">
+        <a href="https://github.com/adelekemarvellous4" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/adelekemarvellous14" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://x.com/Marvii_gis" target="_blank" class="social-link" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/adelekemarvellous4" target="_blank" class="social-link" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card fade-up">
+        <div class="stat-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="stat-number" data-target="14">0</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      
+      <div class="stat-card fade-up" style="transition-delay: 0.1s">
+        <div class="stat-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Core Tools</div>
+      </div>
+      
+      <div class="stat-card fade-up" style="transition-delay: 0.2s">
+        <div class="stat-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="stat-number" data-target="8">0</div>
+        <div class="stat-label">Study Themes</div>
+      </div>
+      
+      <div class="stat-card fade-up" style="transition-delay: 0.3s">
+        <div class="stat-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section - Redesigned -->
+<section id="about" class="about section">
+  <div class="container">
+    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-label">About Me</span>
+      <p class="section-heading">Transforming geospatial data into actionable intelligence</p>
+    </div>
+    
+    <div class="about-content">
+      <p class="about-intro fade-up">
+        I am a <strong>geospatial analyst</strong> specializing in remote sensing, spatial modelling, GIS programming, and environmental intelligence. My work focuses on extracting insights from satellite imagery, building predictive spatial models, and developing geospatial tools using Python and WebGIS technologies.
+      </p>
+    
+      
+      <!-- Tech Stack Grid -->
+      <div class="tech-stack">
+        <div class="tech-stack-header fade-up">
+          <span class="section-label">Core Stack</span>
+          <h3 style="font-size: 2rem; font-weight: 700; color: var(--white); font-family: var(--font-head); margin-top: 0.5rem;">Technologies & Tools</h3>
+        </div>
+        
+        <div class="tech-grid">
+          <div class="tech-category fade-up" style="transition-delay: 0.1s">
+            <div class="tech-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h4 class="tech-title">Geospatial</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">ArcGIS Pro</span>
+              <span class="tech-tag">QGIS</span>
+              <span class="tech-tag">Google Earth Engine</span>
+              <span class="tech-tag">Remote Sensing</span>
+              <span class="tech-tag">Spatial Analysis</span>
+            </div>
+          </div>
+          
+          <div class="tech-category fade-up" style="transition-delay: 0.2s">
+            <div class="tech-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4 class="tech-title">Programming</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">GeoPandas</span>
+              <span class="tech-tag">Rasterio</span>
+            </div>
+          </div>
+          
+          <div class="tech-category fade-up" style="transition-delay: 0.3s">
+            <div class="tech-icon">
+              <i class="fas fa-chart-area"></i>
+            </div>
+            <h4 class="tech-title">Data Science</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Spatial ML</span>
+              <span class="tech-tag">Statistical Modeling</span>
+              <span class="tech-tag">Data Viz</span>
+            </div>
+          </div>
+          
+          <div class="tech-category fade-up" style="transition-delay: 0.4s">
+            <div class="tech-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h4 class="tech-title">Development</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Git / GitHub</span>
+              <span class="tech-tag">VS Code</span>
+              <span class="tech-tag">Jupyter</span>
+              <span class="tech-tag">WebGIS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Projects Section - Elite Hybrid -->
+<section id="projects" class="projects section">
+  <div class="container">
+    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-label">Featured Projects</span>
+      <h2 class="section-heading">Spatial Intelligence in Action</h2>
+    </div>
+
+    <div class="projects-shell">
+      <div id="featured-projects-grid" class="featured-projects-grid"></div>
+      <div id="featured-pagination" class="featured-pagination"></div>
+
+      <div class="project-library fade-up" id="project-library">
+        <div class="library-header">
+          <div>
+            <h3 class="library-title">Project Library</h3>
+            <p class="library-subtitle">
+              Browse the wider body of work by theme. Keep StoryMap and report links for each project, and swap every placeholder image or link with your final assets.
+            </p>
+          </div>
+          <span class="badge"><i class="fas fa-folder-tree"></i> More GIS Work</span>
+        </div>
+        <div class="library-filter-row" id="library-filter-row"></div>
+        <div class="library-grid" id="library-grid"></div>
+        <p class="project-helper-note">Tip: Replace every <strong>#</strong> link with your real StoryMap, GitHub, report, or dashboard URL.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section - Redesigned -->
+
+<section id="skills" class="skills section">
+  <div class="container">
+    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-heading">Skills & Expertise</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Technologies and tools I use to bring projects to life</p>
+    </div>
+    
+    <div class="skills-content">
+      <!-- Progress Bars Section -->
+      <div class="skills-bars fade-left">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Geospatial Analysis</span>
+            <span class="skill-percentage">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="95"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Remote Sensing</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="90"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Google Earth Engine</span>
+            <span class="skill-percentage">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="92"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Python (Geospatial)</span>
+            <span class="skill-percentage">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="88"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Spatial Data Science</span>
+            <span class="skill-percentage">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="85"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Cartography</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="90"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">WebGIS</span>
+            <span class="skill-percentage">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="75"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Machine Learning</span>
+            <span class="skill-percentage">78%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-progress="78"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Circular Skills Visualization -->
+      <div class="skills-visual fade-right">
+        <div class="skills-circle">
+          <div class="circle-item">
+            <i class="fas fa-map circle-icon"></i>
+            <span class="circle-label">Mapping</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-code circle-icon"></i>
+            <span class="circle-label">Dev</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-database circle-icon"></i>
+            <span class="circle-label">Spatial DB</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-brain circle-icon"></i>
+            <span class="circle-label">ML</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-globe circle-icon"></i>
+            <span class="circle-label">GIS</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-chart-bar circle-icon"></i>
+            <span class="circle-label">Data Viz</span>
+          </div>
+          <div class="circle-item">
+            <i class="fab fa-python circle-icon"></i>
+            <span class="circle-label">Python</span>
+          </div>
+          <div class="circle-item">
+            <i class="fas fa-satellite circle-icon"></i>
+            <span class="circle-label">Remote Sensing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications section">
+  <div class="container">
+    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-label">Professional Development</span>
+      <h2 class="section-heading">Certifications & Training</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Continuous learning in geospatial analysis and data science</p>
+    </div>
+    
+    <div class="cert-grid">
+      <div class="cert-card fade-up">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <span class="cert-badge">Coursera</span>
+        </div>
+        <h3 class="cert-title">ArcGIS Desktop for Spatial Analysis: Go from Basic to Pro</h3>
+        <p class="cert-issuer">Packt • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Aug 27, 2025</span>
+          <span class="cert-verify">ID: W1ZDJY8VM166</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.1s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <span class="cert-badge">Esri</span>
+        </div>
+        <h3 class="cert-title">Cartography</h3>
+        <p class="cert-issuer">Esri Training</p>
+        <div class="cert-footer">
+          <span class="cert-date">Oct 3, 2025</span>
+          <span class="cert-verify">6-week MOOC</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.2s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <span class="cert-badge">UC Davis</span>
+        </div>
+        <h3 class="cert-title">Geospatial Analysis with ArcGIS</h3>
+        <p class="cert-issuer">University of California, Davis • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Aug 31, 2025</span>
+          <span class="cert-verify">ID: R4D5QFBWQQEV</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.3s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <span class="cert-badge">Toronto</span>
+        </div>
+        <h3 class="cert-title">GIS Data Acquisition and Map Design</h3>
+        <p class="cert-issuer">University of Toronto • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Aug 14, 2025</span>
+          <span class="cert-verify">ID: YSEOPPI871BB</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.4s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <span class="cert-badge">L&T</span>
+        </div>
+        <h3 class="cert-title">Mastering Geospatial Analysis with QGIS</h3>
+        <p class="cert-issuer">L&T EduTech • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Sep 29, 2025</span>
+          <span class="cert-verify">ID: LYQJL1YM8YDP</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.5s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-chart-area"></i>
+          </div>
+          <span class="cert-badge">Yonsei</span>
+        </div>
+        <h3 class="cert-title">Spatial Data Science and Applications</h3>
+        <p class="cert-issuer">Yonsei University • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Aug 16, 2025</span>
+          <span class="cert-verify">ID: TI6H3KV35IS4</span>
+        </div>
+      </div>
+      
+      <div class="cert-card fade-up" style="transition-delay: 0.6s">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="cert-badge">Hopkins</span>
+        </div>
+        <h3 class="cert-title">The Data Scientist's Toolbox</h3>
+        <p class="cert-issuer">Johns Hopkins University • Coursera</p>
+        <div class="cert-footer">
+          <span class="cert-date">Jun 29, 2025</span>
+          <span class="cert-verify">ID: A9VOWI6FJMG0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-heading">Let's Work Together</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Have a project in mind or want to collaborate? Let's connect!</p>
+    </div>
+    
+    <div class="contact-grid">
+      <div class="contact-cards fade-left">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">adelekemarvellous4@gmail.com</div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Akure, Ondo State, Nigeria</div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">@adelekemarvellous</div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">Adeleke Marvellous Ayomide</div>
+        </div>
+      </div>
+      
+      <div class="contact-cta fade-right">
+        <h3>Ready to start a project?</h3>
+        <p>I'm available for freelance GIS projects, research collaboration, and consulting opportunities across environmental monitoring, mapping, and spatial analysis.</p>
+        <a href="mailto:adelekemarvellous4@gmail.com" class="btn btn-primary btn-lg">
+          <i class="fas fa-paper-plane"></i>
+          <span>Send Me a Message</span>
+        </a>
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+          <a href="#" class="btn btn-outline">
+            <i class="fas fa-file-download"></i>
+            <span>Download CV</span>
+          </a>
+          <a href="https://linkedin.com/in/adelekemarvellous" target="_blank" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i>
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">Adeleke Marvellous</div>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#certifications" class="footer-link">Certifications</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/adelekemarvellous" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/adelekemarvellous" target="_blank" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/adelekemarvII77" target="_blank" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/adelekemarvellous4" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Adeleke Marvellous Ayomide · GIS Portfolio</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

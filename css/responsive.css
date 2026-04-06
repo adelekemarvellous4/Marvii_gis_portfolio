@@ -1,0 +1,135 @@
+/* Responsive styles */
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .elite-project-inner {
+    grid-template-columns: 1.02fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .project-visual-panel {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-content-panel {
+    padding: 1.6rem;
+  }
+}
+
+@media (min-width: 860px) {
+  .project-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-detail-layer {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+@media (min-width: 860px) {
+  .deep-dive-body {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-content {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-burger {
+    display: flex;
+  }
+  
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-roles {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .role-dot {
+    display: none;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-circle {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .circle-item {
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 -35px;
+  }
+  
+  .circle-item:nth-child(1) { transform: translate(0, -135px); }
+  .circle-item:nth-child(2) { transform: translate(95px, -95px); }
+  .circle-item:nth-child(3) { transform: translate(135px, 0); }
+  .circle-item:nth-child(4) { transform: translate(95px, 95px); }
+  .circle-item:nth-child(5) { transform: translate(0, 135px); }
+  .circle-item:nth-child(6) { transform: translate(-95px, 95px); }
+  .circle-item:nth-child(7) { transform: translate(-135px, 0); }
+  .circle-item:nth-child(8) { transform: translate(-95px, -95px); }
+}
+
+@media (max-width: 480px) {
+  .profile-image-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
