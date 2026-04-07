@@ -1,4 +1,4 @@
-# Updated GIS Portfolio Website
+# Adeleke Marvellous Ayomide GIS Portfolio website
 
 This project is the split-file version of your original single-file portfolio website. The HTML, CSS, responsive CSS, and JavaScript have been separated for easier editing and maintenance.
 
