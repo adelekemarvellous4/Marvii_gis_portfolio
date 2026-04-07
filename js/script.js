@@ -155,7 +155,7 @@ const eliteProjects = [
     tools: ['ArcGIS Pro', 'Landsat', 'NDVI', 'AGB'],
     visualLabel: 'Vegetation health and carbon stock maps',
     image: "assets/frin_ndvi.png",
-    storymap: '#', report: '#', caseStudy: '#',
+    storymap: '#', report: 'https://drive.google.com/file/d/1bHBtZ8I5KvrcscK7T91YFg5uNylSIZSq/view?usp=sharing', caseStudy: '#',
     theme: 'Climate & Carbon',
     workflow: ['Acquire multi-year imagery.', 'Map NDVI and temporal change.', 'Estimate above-ground biomass.', 'Convert biomass to carbon stock and interpret spatially.'],
     outputs: ['NDVI maps', 'AGB maps', 'Carbon stock maps', 'Temporal comparison charts']
@@ -174,7 +174,7 @@ const eliteProjects = [
     tools: ['ArcGIS Pro', 'Landsat', 'RDVI', 'Raster Analysis'],
     visualLabel: 'Urban gradient and carbon density visuals',
     image: "assets/osogbo-carbon.png",
-    storymap: '#', report: '#', caseStudy: '#',
+    storymap: '#', report: 'https://drive.google.com/file/d/1mvmWJST8Sb9wBeDxbWxSH_CECVxYyPVH/view?usp=sharing', caseStudy: '#',
     theme: 'Climate & Carbon',
     workflow: ['Compile time-series imagery.', 'Model biomass and carbon from RDVI.', 'Compare LGA-level urbanization gradient patterns.', 'Interpret long-term carbon decline.'],
     outputs: ['Carbon density maps', 'Gradient comparison graphics', 'LGA summary panels', 'Trend charts']
@@ -212,7 +212,7 @@ const eliteProjects = [
     tools: ['Google Earth Engine', 'Sentinel-2', 'ArcGIS Pro', 'Change Detection'],
     visualLabel: 'Wetland trend and loss maps',
     image: "assets/wetland_loss.png",
-    storymap: '#', report: '#', caseStudy: '#',
+    storymap: '#', report: 'https://drive.google.com/file/d/1Pr0vuyBWaYPdd733zXwthuAvr7wsPJAW/view?usp=sharing', caseStudy: '#',
     theme: 'Environmental Monitoring',
     workflow: ['Generate annual dry-season composites.', 'Classify wetland and related classes.', 'Compare yearly maps to detect loss.', 'Visualize staged conversion with charts and maps.'],
     outputs: ['Wetland trend chart', 'LULC maps', 'Wetland loss maps', 'Industrial corridor interpretation']
@@ -231,7 +231,7 @@ const eliteProjects = [
     tools: ['Sentinel-2', 'SRTM', 'NDVI', 'Drainage Analysis'],
     visualLabel: 'Spill impact, NDVI, and drainage visuals',
     image: "assets/oil_spill.png",
-    storymap: '#', report: '#', caseStudy: '#',
+    storymap: '#', report: 'https://drive.google.com/file/d/1GnbXNCY9z35KeTQAe-tPBZKvpgU5mBbg/view?usp=sharing', caseStudy: '#',
     theme: 'Environmental Monitoring',
     workflow: ['Create pre-spill and post-spill composites.', 'Map NDVI and NDWI change.', 'Classify land cover before and after the spill.', 'Use terrain and drainage analysis to explain spread dynamics.'],
     outputs: ['NDVI change map', 'NDWI change map', 'LULC comparison', 'Slope and drainage visuals']
@@ -250,7 +250,7 @@ const eliteProjects = [
     tools: ['Google Earth Engine', 'Landsat 9', 'MODIS LST', 'SMAD'],
     visualLabel: 'Suitability and drought indicator maps',
     image: "assets/crop_suitability.png",
-    storymap: '#', report: '#', caseStudy: '#',
+    storymap: '#', report: 'https://drive.google.com/file/d/1YJuYezGAiSo89ErRnWo5cjyI_Vu8rggE/view?usp=sharing', caseStudy: '#',
     theme: 'Climate & Carbon',
     workflow: ['Process Landsat data with masking and compositing.', 'Compute vegetation and moisture indices.', 'Compute drought-related indices.', 'Interpret statewide spatial patterns.'],
     outputs: ['Suitability index maps', 'Drought index maps', 'Statewide interpretation panels', 'Indicator exports']
@@ -288,7 +288,7 @@ const eliteProjects = [
     tools: ['Landsat', 'Setinel-2', 'Geemap', 'ArcGIS Pro'],
     visualLabel: 'Carbon density and forest condition maps',
     image: "assets/urban_heat.png",
-    storymap: 'https://arcg.is/1jWiiz4', report: '#', caseStudy: '#',
+    storymap: 'https://arcg.is/1jWiiz4', report: 'https://drive.google.com/file/d/1-8QA2dkijEGf28qa1GhUuJBgOSngTPJC/view?usp=sharing', caseStudy: '#',
     theme: 'Environmental Monitoring',
     workflow: ['Acquisition oof Setinel-2 Images for NDVI and Landsat-9 for LST.', 'Computation of NDVI and LST and Resampling of NDVI to.', 'Delineation of area with >70% LST & <30% NDVI.', 'Visualisation of delineated areas as the Urban Heat Island.'],
     outputs: ['RDVI maps', 'Biomass surfaces', 'Carbon density maps', 'Forest interpretation panels']
@@ -307,7 +307,7 @@ const eliteProjects = [
     tools: ['ArcGIS Pro', 'IDW', 'DEM', 'Statistics'],
     visualLabel: 'Coefficent Regression maps, Local R2 maps, Residual maps ',
     image: "assets/gwr_lagos.png",
-    storymap: 'https://arcg.is/1fDjyn4', report: '#', caseStudy: '#',
+    storymap: 'https://arcg.is/1fDjyn4', report: 'https://drive.google.com/file/d/1bitnBOB1dk_-k2ArysH-uuIv_zhM4xXF/view?usp=sharing', caseStudy: '#',
     theme: 'Data Science & Modelling',
     workflow: ['Prepare well depth and elevation attributes.', 'Generate IDW surfaces.', 'Compare against DEM values.', 'Run correlation and regression analysis.'],
     outputs: ['Correlation tables', 'Regression outputs', 'Elevation comparison plots', 'Integrated report']
