@@ -15,6 +15,7 @@
 
 <link rel="stylesheet" href="css/style.css"/>
 <link rel="stylesheet" href="css/responsive.css"/>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 <body>
 
@@ -25,9 +26,7 @@
     
     <a href="#home" class="nav-brand">
       <div class="nav-brand-mark">
-        <div class="nav-logo">
-          <div class="nav-logo">🗺️</div>
-        </div>
+        <div class="nav-logo">🗺️</div>
       </div>
       <div class="nav-brand-text">
         <span class="nav-brand-name">Adeleke M.</span>
@@ -35,14 +34,14 @@
       </div>
     </a>
 
-    <div class="nav-center-shell">
+    <div class="nav-center-shell" id="mobileMenu">
       <div class="nav-links">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#promises" class="nav-link">Why Work With Me</a>
         <a href="#certifications" class="nav-link">Certifications</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#faq" class="nav-link">FAQ</a>
       </div>
     </div>
 
@@ -277,141 +276,64 @@
   </div>
 </section>
 
-<!-- Skills Section - Redesigned -->
-
-
-<section id="skills" class="skills section">
+<!-- Why Work With Me -->
+<section class="promises section" id="promises">
   <div class="container">
-    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
-      <span class="section-label">What I Do</span>
-      <h2 class="section-heading">Skills & Expertise</h2>
-      <p class="section-subtitle" style="margin: 0 auto;">Technologies and tools I use to bring projects to life</p>
+    <div class="fade-up promises-heading">
+      <span class="section-label">Why Work With Me</span>
+      <h2 class="section-heading">What I Bring to Geospatial Projects</h2>
+      <p class="section-subtitle promises-subtitle">
+        I combine technical GIS workflows, remote sensing analysis, and clear presentation to produce outputs that are both analytically sound and practically useful.
+      </p>
     </div>
-    
-    <div class="skills-content">
-      <!-- Progress Bars Section -->
-      <div class="skills-bars fade-left">
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Geospatial Analysis</span>
-            <span class="skill-percentage">95%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="95"></div>
+
+    <div class="promises-grid">
+      <div class="promise-card fade-up">
+        <div class="promise-icon-wrap">
+          <div class="promise-icon">
+            <i class="fas fa-satellite"></i>
           </div>
         </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Remote Sensing</span>
-            <span class="skill-percentage">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="90"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Google Earth Engine</span>
-            <span class="skill-percentage">92%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="92"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Python (Geospatial)</span>
-            <span class="skill-percentage">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="88"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Spatial Data Science</span>
-            <span class="skill-percentage">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="85"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Cartography</span>
-            <span class="skill-percentage">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="90"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">WebGIS</span>
-            <span class="skill-percentage">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="75"></div>
-          </div>
-        </div>
-        
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Machine Learning</span>
-            <span class="skill-percentage">78%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-progress" data-progress="78"></div>
-          </div>
+        <div class="promise-content">
+          <h3>Strong remote sensing and GIS analysis</h3>
+          <p>
+            I work with satellite imagery, spatial datasets, and geoprocessing tools to produce meaningful analysis across land cover, carbon, drought, suitability, and environmental monitoring projects.
+          </p>
         </div>
       </div>
-      
-      <!-- Circular Skills Visualization -->
-      <div class="skills-visual fade-right">
-        <div class="skills-circle">
-          <div class="circle-item">
-            <i class="fas fa-map circle-icon"></i>
-            <span class="circle-label">Mapping</span>
+
+      <div class="promise-card fade-up" style="transition-delay: 0.1s">
+        <div class="promise-icon-wrap">
+          <div class="promise-icon">
+            <i class="fas fa-layer-group"></i>
           </div>
-          <div class="circle-item">
-            <i class="fas fa-code circle-icon"></i>
-            <span class="circle-label">Dev</span>
+        </div>
+        <div class="promise-content">
+          <h3>Clear outputs, not just raw maps</h3>
+          <p>
+            My work is designed to go beyond technical processing. I deliver maps, charts, reports, layouts, and visual stories that make findings understandable and usable.
+          </p>
+        </div>
+      </div>
+
+      <div class="promise-card fade-up" style="transition-delay: 0.2s">
+        <div class="promise-icon-wrap">
+          <div class="promise-icon">
+            <i class="fas fa-people-arrows"></i>
           </div>
-          <div class="circle-item">
-            <i class="fas fa-database circle-icon"></i>
-            <span class="circle-label">Spatial DB</span>
-          </div>
-          <div class="circle-item">
-            <i class="fas fa-brain circle-icon"></i>
-            <span class="circle-label">ML</span>
-          </div>
-          <div class="circle-item">
-            <i class="fas fa-globe circle-icon"></i>
-            <span class="circle-label">GIS</span>
-          </div>
-          <div class="circle-item">
-            <i class="fas fa-chart-bar circle-icon"></i>
-            <span class="circle-label">Data Viz</span>
-          </div>
-          <div class="circle-item">
-            <i class="fab fa-python circle-icon"></i>
-            <span class="circle-label">Python</span>
-          </div>
-          <div class="circle-item">
-            <i class="fas fa-satellite circle-icon"></i>
-            <span class="circle-label">Remote Sensing</span>
-          </div>
+        </div>
+        <div class="promise-content">
+          <h3>Reliable communication and collaboration</h3>
+          <p>
+            I approach projects with structure, consistency, and transparency, so that expectations stay clear from the first discussion through analysis, interpretation, and final delivery.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- Certifications Section -->
 
@@ -531,72 +453,219 @@
     </div>
   </div>
 </section>
+<!-- FAQ Section -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="fade-up faq-heading">
+      <span class="section-label">Frequently Asked Questions</span>
+      <h2 class="section-heading">Questions About My GIS Work</h2>
+      <p class="section-subtitle" style="margin: 0 auto; max-width: 760px;">
+        A few questions that researchers, collaborators, recruiters, and clients may want to know.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item fade-up">
+        <summary>What kinds of GIS and remote sensing projects do you work on?</summary>
+        <div class="faq-answer">
+          <p>
+            I work on projects involving land use land cover mapping, vegetation and carbon assessment, drought monitoring, suitability analysis, thermal analysis, environmental change detection, and geospatial reporting.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item fade-up" style="transition-delay: 0.05s">
+        <summary>Do you provide only maps, or also written interpretation?</summary>
+        <div class="faq-answer">
+          <p>
+            I provide both. In addition to maps, I can deliver written interpretation, methodological explanation, charts, report-ready visuals, and presentation-friendly summaries.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item fade-up" style="transition-delay: 0.1s">
+        <summary>Which tools do you commonly use?</summary>
+        <div class="faq-answer">
+          <p>
+            My workflow commonly includes ArcGIS Pro, ArcMap, Google Earth Engine, Python geospatial tools, and satellite-based datasets depending on the needs of the project.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item fade-up" style="transition-delay: 0.15s">
+        <summary>Are you available for freelance, remote, or collaborative work?</summary>
+        <div class="faq-answer">
+          <p>
+            Yes. I am open to freelance GIS work, remote geospatial opportunities, collaborative research, and projects that require mapping, remote sensing, spatial analysis, or geospatial storytelling.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item fade-up" style="transition-delay: 0.2s">
+        <summary>Can you work on both academic and applied GIS projects?</summary>
+        <div class="faq-answer">
+          <p>
+            Yes. I can support academic research, portfolio projects, environmental assessments, and applied spatial analysis tasks for practical decision-making and communication.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="contact section">
   <div class="container">
-    <div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+    <div class="fade-up contact-heading-wrap">
       <span class="section-label">Get In Touch</span>
-      <h2 class="section-heading">Let's Work Together</h2>
-      <p class="section-subtitle" style="margin: 0 auto;">Have a project in mind or want to collaborate? Let's connect!</p>
+      <h2 class="section-heading">Let’s Work Together</h2>
+      <p class="section-subtitle contact-subtitle">
+        Have a project in mind, need a GIS analyst, or want to collaborate on spatial research? Send a message and I’ll get back to you.
+      </p>
     </div>
-    
+
     <div class="contact-grid">
-      <div class="contact-cards fade-left">
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">adelekemarvellous4@gmail.com</div>
+      <!-- Left column -->
+      <div class="contact-side fade-left">
+        <div class="contact-side-card contact-intro-card">
+          <span class="contact-mini-label">Open to</span>
+          <h3>Freelance GIS, spatial analysis, and research collaboration</h3>
+          <p>
+            I work across remote sensing, environmental monitoring, cartography, spatial data science, and geospatial web workflows.
+          </p>
         </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
+
+        <div class="contact-cards">
+          <a href="mailto:adelekemarvellous4@gmail.com" class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-card-text">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">adelekemarvellous4@gmail.com</div>
+            </div>
+          </a>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-card-text">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Akure, Ondo State, Nigeria</div>
+            </div>
           </div>
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Akure, Ondo State, Nigeria</div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-github"></i>
-          </div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">@adelekemarvellous</div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fab fa-linkedin"></i>
-          </div>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">Adeleke Marvellous Ayomide</div>
+
+          <a href="https://github.com/adelekemarvellous" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-card-text">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">@adelekemarvellous</div>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/adelekemarvellous14" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="contact-card-text">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">Adeleke Marvellous Ayomide</div>
+            </div>
+          </a>
         </div>
       </div>
-      
+
+      <!-- Right column -->
       <div class="contact-cta fade-right">
-        <h3>Ready to start a project?</h3>
-        <p>I'm available for freelance GIS projects, research collaboration, and consulting opportunities across environmental monitoring, mapping, and spatial analysis.</p>
-        <a href="mailto:adelekemarvellous4@gmail.com" class="btn btn-primary btn-lg">
-          <i class="fas fa-paper-plane"></i>
-          <span>Send Me a Message</span>
-        </a>
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
-          <a href="assets/document/Adeleke Marvellous CV.pdf" class="btn btn-outline">
+        <div class="contact-cta-top">
+          <span class="contact-mini-label">Project Inquiry</span>
+          <h3>Ready to start a project?</h3>
+          <p>
+            Share your project idea, study area, data needs, or collaboration request. I’ll review it and respond through email.
+          </p>
+        </div>
+
+<form
+  class="contact-form"
+  id="contact-form"
+  action="https://formspree.io/f/xvzvjnav"
+  method="POST"
+>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your full name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      placeholder="GIS mapping, remote sensing, consultation..."
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="message">Project Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      placeholder="Tell me what you need help with, your goals, timeline, or collaboration idea."
+      required
+    ></textarea>
+  </div>
+
+  <input type="hidden" name="_subject" value="New inquiry from Adeleke Marvellous portfolio">
+
+  <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+
+  <button type="submit" class="btn btn-primary contact-submit-btn" id="contact-submit-btn">
+    <i class="fas fa-paper-plane"></i>
+    <span>Send Message</span>
+  </button>
+</form>
+
+        <div class="contact-action-row">
+          <a href="assets/document/Adeleke Marvellous CV.pdf" class="btn btn-outline" target="_blank">
             <i class="fas fa-file-download"></i>
             <span>Download CV</span>
           </a>
+
           <a href="https://linkedin.com/in/adelekemarvellous14" target="_blank" class="btn btn-outline">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin-in"></i>
             <span>Connect on LinkedIn</span>
           </a>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section>          
 
 <!-- Footer -->
 <footer class="footer">
@@ -607,9 +676,9 @@
         <a href="#home" class="footer-link">Home</a>
         <a href="#about" class="footer-link">About</a>
         <a href="#projects" class="footer-link">Projects</a>
-        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#promises" class="footer-link">Why Work With Me</a>
         <a href="#certifications" class="footer-link">Certifications</a>
-        <a href="#contact" class="footer-link">Contact</a>
+        <a href="#faq" class="footer-link">FAQ</a>
       </div>
       <div class="footer-social">
         <a href="https://github.com/adelekemarvellous4" target="_blank" class="social-link">

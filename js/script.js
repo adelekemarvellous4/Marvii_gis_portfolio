@@ -101,25 +101,80 @@ window.addEventListener('scroll', () => {
   }
 });
 
+const contactForm = document.getElementById('contact-form');
+const formFeedback = document.getElementById('form-feedback');
+const submitBtn = document.getElementById('contact-submit-btn');
+
+if (contactForm && formFeedback && submitBtn) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    formFeedback.className = 'form-feedback';
+    formFeedback.textContent = '';
+
+    submitBtn.classList.add('is-loading');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formFeedback.className = 'form-feedback success show';
+        formFeedback.textContent = 'Your message has been sent successfully. I’ll get back to you through email.';
+        contactForm.reset();
+      } else {
+        formFeedback.className = 'form-feedback error show';
+        formFeedback.textContent = 'Something went wrong while sending your message. Please try again.';
+      }
+    } catch (error) {
+      formFeedback.className = 'form-feedback error show';
+      formFeedback.textContent = 'Network error. Please check your connection and try again.';
+    } finally {
+      submitBtn.classList.remove('is-loading');
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
+    }
+  });
+}
 // Mobile menu toggle
-const burgerBtn = document.getElementById('burger-btn');
-const navLinksContainer = document.querySelector('.nav-links');
 
-burgerBtn.addEventListener('click', () => {
-  navLinksContainer.classList.toggle('active');
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerBtn = document.getElementById("burger-btn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-// Smooth scroll for all links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!burgerBtn || !mobileMenu) return;
+
+  burgerBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("active");
+    burgerBtn.classList.toggle("active");
+  });
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      mobileMenu.classList.remove("active");
+      burgerBtn.classList.remove("active");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    const clickedInsideMenu = mobileMenu.contains(e.target);
+    const clickedBurger = burgerBtn.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedBurger) {
+      mobileMenu.classList.remove("active");
+      burgerBtn.classList.remove("active");
     }
   });
 });
-
 
 const eliteProjects = [
   {
@@ -127,9 +182,9 @@ const eliteProjects = [
     number: '01',
     icon: '🌳',
     title: 'Urban Expansion and Vegetation Carbon Dynamics in Akure Peri-Urban Region (1986–2025)',
-    category: 'Remote Sensing • Carbon Modelling • Change Detection',
-    description: 'A multi-temporal land cover and carbon dynamics study that quantified how peri-urban expansion restructured forest extent, altered transition pathways, and reduced the carbon retention function of the Akure landscape.',
-    objective: 'To measure the ecological cost of urban expansion by linking land cover transformation directly to forest decline, carbon loss, and transition dynamics over nearly four decades.',
+    category: 'Remote Sensing • Carbon Modelling • Change Detection' ,
+    description: 'As cities grow, natural vegetation is increasingly cleared and converted into built-up surfaces and bare ground. This transition leads to a reduction in vegetation cover and  fragmentation of ecosystems. A key consequence is the depletion of ecosystem carbon, since vegetation acts as a major carbon sink through photosynthesis and the loss of vegetative cover therefore reduces carbon storage.  This study links urban expansion to vegetation carbon loss, providing insights that can support sustainable urban planning and environmental management.',
+    objective: 'This study evaluates the ecological cost of urban sprawl by analyzing how land cover transformation over nearly forty years has directly triggered forest decline, significant carbon loss, and complex land-use transition dynamics. The study aims to provide actionable insights for urban planners and environmental policymakers to mitigate carbon loss and promote sustainable land use in rapidly urbanizing regions.',
     methods: ['Landsat multi-temporal imagery', 'Random Forest classification', 'Post-classification change detection', 'RDVI-based AGB and carbon modelling', 'ArcGIS Pro spatial analysis and cartography'],
     metrics: ['Forest declined from ~220,394 ha to ~175,071 ha', 'Built-up expanded from ~4,320 ha to ~44,836 ha', 'Forest-to-nonforest carbon loss ≈ 706,566 tC', 'Forest→Bare/Rock contributed ~74.5% of loss'],
     insight: 'Urban growth did not simply replace vegetation spatially. It progressively weakened ecosystem carbon storage, with bare land functioning as a major transition stage before permanent urban conversion.',
@@ -139,30 +194,50 @@ const eliteProjects = [
     storymap: 'https://arcg.is/1H4PGn3', report: 'https://drive.google.com/file/d/19yU7Src6y6SVmciQ6bpsFSnoSkg9Ql_H/view?usp=sharing', caseStudy: '#',
     theme: 'Climate & Carbon',
     workflow: ['Prepare multi-temporal Landsat composites.', 'Classify vegetation, built-up, and bare land.', 'Run transition and change detection analysis.', 'Model AGB and carbon storage from RDVI.'],
-    outputs: ['LULC maps', 'Transition maps', 'Carbon loss visuals', 'StoryMap-ready charts']
-  },
-  {
-    id: 'frin-carbon',
+    outputs: ['Land Use Land Cover(LULC) maps, area tables and charts', 'Land Cover Transition maps, area tables and charts', 'Carbon density and Carbon density change maps', 'Vegetation loss and Urban Expansion maps and charts', 'Carbon attribution maps, tables and charts']
+  }, 
+  
+ {
+    id: 'air-pollution-modelling',
     number: '02',
-    icon: '🌿',
-    title: 'Vegetation Health and Carbon Stock Assessment of FRIN, Ibadan',
-    category: 'Forest Monitoring • Biomass Estimation • Climate Analysis',
-    description: 'A temporal forest monitoring analysis across 2020, 2023, and 2025 that translated vegetation greenness into biomass and carbon storage to assess recovery, maturity, and edge vulnerability within FRIN.',
-    objective: 'To evaluate how changes in vegetation vigor correspond to structural biomass gain and carbon sequestration potential within a managed forest reserve.',
-    methods: ['Landsat multi-year imagery', 'NDVI mapping and change analysis', 'Exponential AGB modelling', 'IPCC-based carbon conversion', 'Comparative temporal interpretation'],
-    metrics: ['Mean NDVI increased from 0.45 to 0.63', 'Mean AGB increased from 210 t/ha to 275 t/ha', 'Mean carbon stock increased from 105 tC/ha to 138 tC/ha', 'Peak NDVI rose from 0.755 to 0.8619'],
-    insight: 'The forest core behaved as a resilient biomass and carbon reservoir, while boundary zones repeatedly expressed the signature of disturbance, fragmentation, and localized decline.',
-    tools: ['ArcGIS Pro', 'Landsat', 'NDVI', 'AGB'],
-    visualLabel: 'Vegetation health and carbon stock maps',
-    image: "assets/frin_ndvi.png",
-    storymap: '#', report: 'https://drive.google.com/file/d/1bHBtZ8I5KvrcscK7T91YFg5uNylSIZSq/view?usp=sharing', caseStudy: '#',
-    theme: 'Climate & Carbon',
-    workflow: ['Acquire multi-year imagery.', 'Map NDVI and temporal change.', 'Estimate above-ground biomass.', 'Convert biomass to carbon stock and interpret spatially.'],
-    outputs: ['NDVI maps', 'AGB maps', 'Carbon stock maps', 'Temporal comparison charts']
+    icon: '💧',
+    title: 'Spatial Modelling of Air Pollution Using Geographically Weighted Regression (GWR) in Lagos State',
+    category: 'Spatial Statistics • Correlation • Spatial Regression',
+    description: 'The study demonstrates the capability of Geographically Weighted REgression (GWR) in identifying spatially varying drivers of air pollution and provides actionable insights for urban planners and environmental policymakers to develop targeted air quality management strategies in Lagos State.',
+    objective: 'This study utilizes Geographically Weighted Regression (GWR) to evaluate the spatially varying statistical relationships between land cover, vegetation, topography, and the distribution of NO₂ concentrations across Lagos State, The study aims to reveal how local factors influence air pollution patterns and to inform sustainable urban planning and environmental management strategies. ',
+    methods: ['Point data preparation', 'IDW interpolation', 'DEM extraction', 'Correlation matrix analysis', 'Regression and exploratory statistics'],
+    metrics: [ 'The GWR model reveals that air pollution in Lagos is spatially heterogeneous, influenced by varying local factors', 'Population density and built-up land cover significantly increase NO₂ concentrations, while elevation and vegetation mitigate them', 'Integrating GWR-based modeling with continuous monitoring will enhance sustainable air quality management and promote healthier urban environments.'],
+    insight: 'The comparison showed how elevation source and interpolation approach influence the interpretation of groundwater-linked spatial patterns.',
+    tools: ['ArcGIS Pro', 'IDW', 'DEM', 'Statistics'],
+    visualLabel: 'Coefficent Regression maps and Local R2 map',
+    image: "assets/gwr_lagos.png",
+    storymap: 'https://arcg.is/1fDjyn4', report: 'https://drive.google.com/file/d/1bitnBOB1dk_-k2ArysH-uuIv_zhM4xXF/view?usp=sharing', caseStudy: '#',
+    theme: 'Data Science & Modelling',
+    workflow: ['Prepare well depth and elevation attributes.', 'Generate IDW surfaces.', 'Compare against DEM values.', 'Run correlation and regression analysis.'],
+    outputs: [ 'Ordinary Least Squares (OLS) Regression maps and tables', 'GWR Coefficient Regression maps and tables', 'Local R square map and table', 'Prediction map and table', 'Residual map and table']
+  },
+    {
+    id: 'urban-heat-island',
+    number: '03',
+    icon: '🌲',
+    title: 'Geospatial Visualization of Urban Heat Islands in Akure South, Ondo State',
+    category: 'Urban Ecology, • Vegetation health • Thermal Remote Sensing',
+    description: 'This study mapped the Urban Heat Island (UHI) pattern in Akure South by integrating thermal data (LST) and vegetation density (NDVI), and applying a percentile-based hotspot delineation technique. This reveal the  spatial disparity in heat intensity across the LGA, with UHI concentrated in built-up neighbourhoods where vegetation has been significantly reduced..',
+    objective: 'To explore how remote sensing and GIS can help us understand and mitigate urban heat impacts by visually showing where and why the city feels hotter. This study seek to visualize the areas where the UHI(Urban Heat ISlannd) are, and are more intense i.e UHI Hotspot areas in Akure South, and to understand the relationship between vegetation health and surface temperature in the urban context.',
+    methods: ['Acquisition of Setinel-2 Images for NDVI and Landsat-9 for LST.', 'Computation of NDVI and LST and Resampling of NDVI to 30m resolution', 'Delineation of area with >70% LST & <30% NDVI', 'Visualisation of delineated areas as the Urban Heat Island', 'Production of maps'],
+    metrics: [' The 70th percentile threshold of LST is (40.16 °C) defined the upper temperature zone that contains the hottest 30% of the landscape', 'The 30th percentile NDVI threshold (0.264) captured the least vegetated 30% of pixels', ' By overlaying both thresholds, the analysis identified the specific locations where high thermal stress and low vegetation coincide'],
+    insight: 'Carbon density was spatially uneven, reflecting differences in forest condition, disturbance history, and local environmental structure.',
+    tools: ['Landsat', 'Setinel-2', 'Geemap', 'ArcGIS Pro'],
+    visualLabel: 'NDVI map, LST map and UHI map',
+    image: "assets/urban_heat.png",
+    storymap: 'https://arcg.is/1jWiiz4', report: 'https://drive.google.com/file/d/1-8QA2dkijEGf28qa1GhUuJBgOSngTPJC/view?usp=sharing', caseStudy: '#',
+    theme: 'Environmental Monitoring',
+    workflow: ['Acquisition of Setinel-2 Images for NDVI and Landsat-9 for LST.', 'Computation of NDVI and LST and Resampling of NDVI to.', 'Delineation of area with >70% LST & <30% NDVI.', 'Visualisation of delineated areas as the Urban Heat Island.'],
+    outputs: ['Land Surface Temperature(LST) map', 'Normalized Difference Vegetation Index (NDVI) map', 'Urban Heat Island(UHI) Hotspot map', 'UHI Threshold Table']
   },
   {
     id: 'osogbo-gradient',
-    number: '03',
+    number: '04',
     icon: '📉',
     title: 'Carbon Storage and Urbanization Gradient Analysis in Osogbo Peri-Urban Areas',
     category: 'Urban Ecology • Carbon Density • Gradient Analysis',
@@ -181,7 +256,7 @@ const eliteProjects = [
   },
   {
     id: 'oyo-health',
-    number: '04',
+    number: '05',
     icon: '🏥',
     title: 'Optimal Sites for New Health Outposts in Rural Oyo State',
     category: 'Suitability Analysis • Accessibility • Health GIS',
@@ -200,7 +275,7 @@ const eliteProjects = [
   },
   {
     id: 'lekki-wetland',
-    number: '05',
+    number: '06',
     icon: '🌊',
     title: 'Wetland Loss Analysis of Lekki FTZ and Port Corridor (2018–2024)',
     category: 'Coastal Change • Wetland Monitoring • GEE Workflow',
@@ -219,7 +294,7 @@ const eliteProjects = [
   },
   {
     id: 'abua-oilspill',
-    number: '06',
+    number: '07',
     icon: '🛢️',
     title: 'Oil Spill Monitoring and Environmental Impact Assessment in Abua/Odual',
     category: 'Environmental Monitoring • Spill Impact • Terrain Analysis',
@@ -238,7 +313,7 @@ const eliteProjects = [
   },
   {
     id: 'osun-drought',
-    number: '07',
+    number: '08',
     icon: '🌾',
     title: 'Crop Suitability and Drought Assessment of Osun State Using Google Earth Engine',
     category: 'Agrometeorology • Spectral Indices • Drought Monitoring',
@@ -257,7 +332,7 @@ const eliteProjects = [
   },
   {
     id: 'owan-lst',
-    number: '08',
+    number: '09',
     icon: '🌡️',
     title: 'Spatial and Tempral Analysis of Land Surface Temperature and Vegetation Dynamics: A case study of Akoko North East LGA (2015–2025)',
     category: 'Thermal Remote Sensing • NDVI–LST • Climate Analysis',
@@ -274,43 +349,25 @@ const eliteProjects = [
     workflow: ['Prepare thermal and reflective bands.', 'Compute NDVI and vegetation proportion.', 'Convert radiance to brightness temperature and LST.', 'Compare thermal behavior spatially across years.'],
     outputs: ['LST maps', 'NDVI maps', 'Temperature change maps', 'Thermal interpretation summary']
   },
+
   {
-    id: 'urban-heat-island',
-    number: '09',
-    icon: '🌲',
-    title: 'Mapping Urban Heat Islands in Akure South, Ondo State',
-    category: 'Forest Monitoring • Biomass Estimation • Carbon Mapping',
-    description: 'This study mapped the Urban Heat Island (UHI) pattern in Akure South by integrating thermal data (LST) and vegetation density (NDVI), and applying a percentile-based hotspot delineation technique. This reveal the  spatial disparity in heat intensity across the LGA, with UHI concentrated in built-up neighbourhoods where vegetation has been significantly reduced..',
-    objective: 'To estimate and compare forest biomass and carbon density patterns using vegetation index sensitivity across forested landscapes in Osun State.',
-    methods: ['Acquisition oof Setinel-2 Images for NDVI and Landsat-9 for LST.', 'Computation of NDVI and LST and Resampling of NDVI to 30m resolution', 'Delineation of area with >70% LST & <30% NDVI', 'Visualisation of delineated areas as the Urban Heat Island', 'Production of maps'],
-    metrics: ['Forest-only carbon surfaces generated', 'Carbon density compared across LGAs', 'RDVI patterns linked to biomass variation', 'Forest carbon hotspots identified'],
-    insight: 'Carbon density was spatially uneven, reflecting differences in forest condition, disturbance history, and local environmental structure.',
-    tools: ['Landsat', 'Setinel-2', 'Geemap', 'ArcGIS Pro'],
-    visualLabel: 'Carbon density and forest condition maps',
-    image: "assets/urban_heat.png",
-    storymap: 'https://arcg.is/1jWiiz4', report: 'https://drive.google.com/file/d/1-8QA2dkijEGf28qa1GhUuJBgOSngTPJC/view?usp=sharing', caseStudy: '#',
-    theme: 'Environmental Monitoring',
-    workflow: ['Acquisition oof Setinel-2 Images for NDVI and Landsat-9 for LST.', 'Computation of NDVI and LST and Resampling of NDVI to.', 'Delineation of area with >70% LST & <30% NDVI.', 'Visualisation of delineated areas as the Urban Heat Island.'],
-    outputs: ['RDVI maps', 'Biomass surfaces', 'Carbon density maps', 'Forest interpretation panels']
-  },
-  {
-    id: 'air-pollution-modelling',
-    number: '10',
-    icon: '💧',
-    title: 'Spatial Modelling of Air Pollution Using GWR in Lagos State',
-    category: 'Spatial Statistics • Correlation • Regression',
-    description: 'The study demonstrates the capability of Geographically Weighted REgression (GWR) in identifying spatially varying drivers of air pollution and provides actionable insights for urban planners and environmental policymakers to develop targeted air quality management strategies in Lagos State.',
-    objective: 'To evaluate the statistical relationship and regression between Land Cover, Vegetation, Topography, on the spatial distribution of NO2(Air Pollution) in Lagos state.',
-    methods: ['Point data preparation', 'IDW interpolation', 'DEM extraction', 'Correlation matrix analysis', 'Regression and exploratory statistics'],
-    metrics: ['Correlation tables generated', 'Regression outputs compared', 'IDW and DEM elevation relationships evaluated', 'Spatial-statistical patterns summarized'],
-    insight: 'The comparison showed how elevation source and interpolation approach influence the interpretation of groundwater-linked spatial patterns.',
-    tools: ['ArcGIS Pro', 'IDW', 'DEM', 'Statistics'],
-    visualLabel: 'Coefficent Regression maps, Local R2 maps, Residual maps ',
-    image: "assets/gwr_lagos.png",
-    storymap: 'https://arcg.is/1fDjyn4', report: 'https://drive.google.com/file/d/1bitnBOB1dk_-k2ArysH-uuIv_zhM4xXF/view?usp=sharing', caseStudy: '#',
-    theme: 'Data Science & Modelling',
-    workflow: ['Prepare well depth and elevation attributes.', 'Generate IDW surfaces.', 'Compare against DEM values.', 'Run correlation and regression analysis.'],
-    outputs: ['Correlation tables', 'Regression outputs', 'Elevation comparison plots', 'Integrated report']
+  id: 'frin-carbon',
+  number: '10',
+  icon: '🌿',
+  title: 'Vegetation Health and Carbon Stock Assessment of FRIN, Ibadan',
+  category: 'Forest Monitoring • Biomass Estimation • Climate Analysis',
+  description: 'A temporal forest monitoring analysis across 2020, 2023, and 2025 that translated vegetation greenness into biomass and carbon storage to assess recovery, maturity, and edge vulnerability within FRIN.',
+  objective: 'To evaluate how changes in vegetation vigor correspond to structural biomass gain and carbon sequestration potential within a managed forest reserve.',
+  methods: ['Landsat multi-year imagery', 'NDVI mapping and change analysis', 'Exponential AGB modelling', 'IPCC-based carbon conversion', 'Comparative temporal interpretation'],
+  metrics: ['Mean NDVI increased from 0.45 to 0.63', 'Mean AGB increased from 210 t/ha to 275 t/ha', 'Mean carbon stock increased from 105 tC/ha to 138 tC/ha', 'Peak NDVI rose from 0.755 to 0.8619'],
+  insight: 'The forest core behaved as a resilient biomass and carbon reservoir, while boundary zones repeatedly expressed the signature of disturbance, fragmentation, and localized decline.',
+  tools: ['ArcGIS Pro', 'Landsat', 'NDVI', 'AGB'],
+  visualLabel: 'Vegetation health and carbon stock maps',
+  image: "assets/frin_ndvi.png",
+  storymap: '#', report: 'https://drive.google.com/file/d/1bHBtZ8I5KvrcscK7T91YFg5uNylSIZSq/view?usp=sharing', caseStudy: '#',
+  theme: 'Climate & Carbon',
+  workflow: ['Acquire multi-year imagery.', 'Map NDVI and temporal change.', 'Estimate above-ground biomass.', 'Convert biomass to carbon stock and interpret spatially.'],
+  outputs: ['NDVI maps', 'AGB maps', 'Carbon stock maps', 'Temporal comparison charts']
   },
   {
     id: 'dsmw-soils',
@@ -682,3 +739,6 @@ renderEliteLibrary();
 console.log('%c🗺️ Adeleke Marvellous Ayomide', 'color: #22d3ee; font-size: 24px; font-weight: bold;');
 console.log('%cGIS Analyst | Spatial Data Scientist | Remote Sensing Specialist', 'color: #67e8f9; font-size: 14px;');
 console.log('%c\nTransforming spatial data into actionable intelligence', 'color: #94a3b8; font-size: 12px;');
+
+
+
